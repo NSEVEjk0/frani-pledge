@@ -1,0 +1,25 @@
+{
+  "name": "frani-pledge",
+  "version": "1.0.0",
+  "description": "Conditional UCT pledges with refund-on-fail and signed completion receipts on Unicity testnet2. Made by CRYPTFRANI.",
+  "type": "module",
+  "bin": {
+    "pledge": "bin/pledge.js"
+  },
+  "scripts": {
+    "start": "node bin/pledge.js daemon",
+    "new": "node bin/pledge.js new",
+    "list": "node bin/pledge.js list",
+    "about": "node bin/pledge.js about",
+    "help": "node bin/pledge.js help",
+    "test": "node test/pledge.test.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@unicitylabs/sphere-sdk": "0.17.3",
+    "ws": "^8.21.3"
+  }
+}

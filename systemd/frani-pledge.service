@@ -1,0 +1,20 @@
+[Unit]
+Description=Frani Pledge — conditional UCT pledges on Unicity testnet2
+Documentation=https://github.com/NSEVEjk0/frani-pledge
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/projects/frani-pledge
+EnvironmentFile=-/home/ubuntu/projects/frani-pledge/.env
+ExecStart=/usr/bin/node bin/pledge.js daemon
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
