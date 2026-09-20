@@ -15,7 +15,7 @@ export const config = {
   deviceId: process.env.PLEDGE_DEVICE_ID || 'frani-pledge-1',
   nametag: process.env.PLEDGE_NAMETAG || '',
   campaignsDir: process.env.PLEDGE_DIR || './campaigns',
-  decimals: Number(process.env.PLEDGE_DECIMALS || '8'),
+  decimals: Number(process.env.PLEDGE_DECIMALS || '18'),
   // How often to check for expired campaigns, in seconds.
   sweepSeconds: Number(process.env.PLEDGE_SWEEP_SECONDS || '30'),
 };

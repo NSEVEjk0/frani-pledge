@@ -1,6 +1,6 @@
 // Frani Split — UCT ↔ base-unit conversion and even-split maths (BigInt).
 
-export function toBaseUnits(whole, decimals = 8) {
+export function toBaseUnits(whole, decimals = 18) {
   const s = String(whole).trim();
   if (!/^\d+(\.\d+)?$/.test(s)) throw new Error(`invalid amount: ${whole}`);
   const [i, f = ''] = s.split('.');
@@ -8,7 +8,7 @@ export function toBaseUnits(whole, decimals = 8) {
   return (BigInt(i) * 10n ** BigInt(decimals) + BigInt(frac || '0')).toString();
 }
 
-export function fromBaseUnits(base, decimals = 8) {
+export function fromBaseUnits(base, decimals = 18) {
   const v = BigInt(String(base));
   const unit = 10n ** BigInt(decimals);
   const whole = v / unit;
